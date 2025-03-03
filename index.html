@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="/Picture/smarthome.png" alt="Logo Smart Home" class="logo">
+            <h1>Dashboard Smart Home</h1>
+        </div>
+        <button class="btn-logout" onclick="logout()">Login</button>
+    </header>
+
+    <main class="container">
+        <!-- Các thẻ điều khiển thiết bị hiện tại -->
+        <div class="device-card">
+            <h3>Rèm cửa</h3>
+            <img id="curtainImage" src="/Picture/curtain_off.png" alt="Thiết bị OFF">
+            <label class="switch">
+                <input type="checkbox" id="curtainSwitch" onchange="toggleDevice()">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <div class="device-card">
+            <h3>Đèn</h3>
+            <img id="lightImage" src="/Picture/light_off.png" alt="Đèn OFF">
+            <label class="switch">
+                <input type="checkbox" id="lightSwitch" onchange="toggleLight()">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <div class="device-card">
+            <h3>Quạt</h3>
+            <img id="fanImage" src="/Picture/fan_off.png" alt="Quạt OFF">
+            <label class="switch">
+                <input type="checkbox" id="fanSwitch" onchange="toggleFan()">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <div class="device-card">
+            <h3>Máy lạnh</h3>
+            <img id="acImage" src="/Picture/ac_off.png" alt="Máy lạnh OFF">
+            <label class="switch">
+                <input type="checkbox" id="acSwitch" onchange="toggleAC()">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <div class="device-card">
+            <h3>Máy bơm</h3>
+            <img id="pumpImage" src="/Picture/pump_off.png" alt="Máy bơm OFF">
+            <label class="switch">
+                <input type="checkbox" id="pumpSwitch" onchange="togglePump()">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <section class="extra-features">
+            <div class="schedule-section">
+                <h3>CHẾ ĐỘ CÀI ĐẶT THỜI GIAN</h3>
+                <form id="scheduleForm">
+                    <div class="schedule-grid">
+                        <div class="schedule-card">
+                            <h4>Rèm cửa</h4>
+                            <div class="schedule-inputs">
+                                <label>Bật:
+                                    <input type="time" id="curtainOnTime">
+                                </label>
+                                <label>Tắt:
+                                    <input type="time" id="curtainOffTime">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="schedule-card">
+                            <h4>Đèn</h4>
+                            <div class="schedule-inputs">
+                                <label>Bật:
+                                    <input type="time" id="lightOnTime">
+                                </label>
+                                <label>Tắt:
+                                    <input type="time" id="lightOffTime">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="schedule-card">
+                            <h4>Quạt</h4>
+                            <div class="schedule-inputs">
+                                <label>Bật:
+                                    <input type="time" id="fanOnTime">
+                                </label>
+                                <label>Tắt:
+                                    <input type="time" id="fanOffTime">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="schedule-card">
+                            <h4>Máy lạnh</h4>
+                            <div class="schedule-inputs">
+                                <label>Bật:
+                                    <input type="time" id="acOnTime">
+                                </label>
+                                <label>Tắt:
+                                    <input type="time" id="acOffTime">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="schedule-card">
+                            <h4>Máy bơm</h4>
+                            <div class="schedule-inputs">
+                                <label>Bật:
+                                    <input type="time" id="pumpOnTime">
+                                </label>
+                                <label>Tắt:
+                                    <input type="time" id="pumpOffTime">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-save">Lưu thay đổi</button>
+                </form>
+            </div>
+            <!-- Khu vực hiển thị nhiệt độ -->
+            <div class="sensor-container">
+              <!-- Card Nhiệt độ -->
+              <div class="sensor-card">
+                  <h3>Nhiệt độ</h3>
+                  <p id="temperatureValue">30°C</p>
+                  <canvas id="temperatureChart"></canvas> <!-- Biểu đồ nhiệt độ -->
+              </div>
+          
+              <!-- Card Độ ẩm -->
+              <div class="sensor-card">
+                  <h3>Độ ẩm</h3>
+                  <p id="humidityValue">60%</p>
+                  <canvas id="humidityChart"></canvas> <!-- Biểu đồ độ ẩm -->
+              </div>
+          </div>          
+          </div>
+          
+        </section>
+    </main>
+
+    <footer>
+        <p>Designed by Tran Minh Thuong</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <audio id="buttonSound" src="sound.mp3" preload="auto"></audio>
+</body>
+</html>
