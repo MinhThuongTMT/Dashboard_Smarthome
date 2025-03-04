@@ -296,7 +296,7 @@ footer {
     header {
         flex-direction: column;
         text-align: center;
-        padding: 10px;
+        padding: 12px;
     }
 
     .logo {
