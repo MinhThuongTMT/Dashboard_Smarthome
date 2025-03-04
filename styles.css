@@ -16,8 +16,10 @@ header {
     align-items: center;
     background-color: #004AAD;
     color: white;
-    padding: 10px 20px;
+    padding: 15px 15px; /* Giảm padding trên và dưới */
+    height: 50px; /* Hoặc đặt chiều cao cố định */
 }
+
 
 .header-left {
     display: flex;
@@ -75,8 +77,8 @@ header {
     margin: 15px;
     border-radius: 12px;
     box-shadow: 0px 4px 8px rgba(0, 74, 173, 0.2);
-    width: 180px;
-    height: 220px;
+    width: 150px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center; /* Căn giữa nội dung */
@@ -183,7 +185,7 @@ input:checked + .slider:before {
     background: #f4f4f4;
     padding: 15px;
     border-radius: 8px;
-    width: 250px;
+    width: 200px;
 }
 
 .schedule-card h4 {
@@ -232,7 +234,7 @@ input:checked + .slider:before {
 }
 
 .sensor-card {
-    width: 650px; /* Tăng chiều rộng */
+    width: 500px; /* Tăng chiều rộng */
     height: 350px; /* Tăng chiều cao */
     background: #ffffff;
     padding: 20px;
@@ -249,7 +251,7 @@ input:checked + .slider:before {
 }
 
 .sensor-card h3 {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     color: #333;
 }
@@ -277,7 +279,7 @@ input:checked + .slider:before {
     background: #333;
     color: #fff;
     text-align: center;
-    padding: 15px 0;
+    padding: 10px 0;
     width: 100%;
   }
 
@@ -315,7 +317,7 @@ footer {
     }
 
     .device-card {
-        width: 95%;
+        width: 90%;
         max-width: 320px;
         height: auto;
         padding: 15px;
@@ -328,7 +330,7 @@ footer {
 
     /* Căn chỉnh section cài đặt thời gian */
     .schedule-section {
-        width: 95%;
+        width: 85%;
         max-width: 380px;
         margin: 12 auto;
         padding: 15px;
@@ -429,4 +431,5 @@ footer {
         padding: 8px;
     }
 }
+
 
